@@ -1,0 +1,92 @@
+body {
+  background-color: #f2fafd;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+$baseColor-1: #25bede;
+$baseColor-2: #7e27dc;
+$baseColor-3: #3ddc46;
+
+$darkenFontColor: white;
+$lightenFontColor: black;
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.container-1 {
+  display: flex;
+  gap: .5em;
+  justify-content: center;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 5em;
+  width: 4em;
+  padding: .3em;
+}
+
+.base-color {
+  width: 6em;
+  background-color: $baseColor-1;
+  color: $lightenFontColor;
+}
+.container-2 .base-color {
+  width: 6em;
+  background-color: $baseColor-2;
+  color: $lightenFontColor;
+}
+.container-3 .base-color {
+  width: 6em;
+  background-color: $baseColor-3;
+  color: $lightenFontColor;
+}
+
+$lighten-values: 20%, 25%, 30%, 35%;
+$darken-values: 20%, 23%, 26%, 35%;
+
+@for $i from 1 through length($lighten-values) {
+  .lighten-#{$i} {
+    background-color: lighten($baseColor-1, nth($lighten-values, $i));
+    color: $lightenFontColor;
+  }
+}
+@for $i from 1 through length($lighten-values) {
+  .container-2 .lighten-#{$i} {
+    background-color: lighten($baseColor-2, nth($lighten-values, $i));
+    color: $lightenFontColor;
+  }
+}
+@for $i from 1 through length($lighten-values) {
+  .container-3 .lighten-#{$i} {
+    background-color: lighten($baseColor-3, nth($lighten-values, $i));
+    color: $lightenFontColor;
+  }
+}
+
+@for $i from 1 through length($darken-values) {
+  .darken-#{$i} {
+    background-color: darken($baseColor-1, nth($darken-values, $i));
+    color: $darkenFontColor;
+  }
+}
+@for $i from 1 through length($darken-values) {
+  .container-2 .darken-#{$i} {
+    background-color: darken($baseColor-2, nth($darken-values, $i));
+    color: $darkenFontColor;
+  }
+}
+@for $i from 1 through length($darken-values) {
+  .container-3 .darken-#{$i} {
+    background-color: darken($baseColor-3, nth($darken-values, $i));
+    color: $darkenFontColor;
+  }
+}
