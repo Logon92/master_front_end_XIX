@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
+body {
+  background-color: #f2fafd;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  font-size: 18px;
+}
+
+$baseColor: #25bede;
+$colors: $baseColor, darken($baseColor, 20%), lighten($baseColor, 30%);
+
+.box, .box-s {
+  display: flex;
+  border: solid 1px black;
+  //border-radius: 5px;
+  height: 3.5em;
+  width: 6em;
+  padding: 1em;
+}
+
+.box-s {
+  background-color: #fff;
+  box-shadow: -10px 10px 5px #00000099;
+}
+
+@for $i from 1 through length($colors) {
+  .box:nth-child(#{$i}) {
+    background-color: nth($colors, $i);
+    color: white;
+  }
+}
+
+.container-letter {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.letter {
+  font-family: "Bitcount Grid Single", system-ui;
+}

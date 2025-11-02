@@ -3,6 +3,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: .5em;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
 }
 
 $baseColor-1: #25bede;
@@ -12,16 +15,9 @@ $baseColor-3: #3ddc46;
 $darkenFontColor: white;
 $lightenFontColor: black;
 
-h1 {
-  display: flex;
-  justify-content: center;
-  margin-top: 2em;
-}
-
 .container-1 {
   display: flex;
   gap: .5em;
-  justify-content: center;
 }
 
 .box {
